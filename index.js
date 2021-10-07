@@ -41,20 +41,63 @@
 // console.log(markHigherBmi, "test 1")
 
 //test 2
-markWeight = 95;
-markHeight = 1.88;
+// markWeight = 95;
+// markHeight = 1.88;
 
-johnWeight = 85;
-johnHeight = 1.76;
+// johnWeight = 85;
+// johnHeight = 1.76;
 
-markBMI = markWeight / (markHeight ** 2)
-johnBMI = johnWeight / (johnHeight ** 2)
+// markBMI = markWeight / (markHeight ** 2)
+// johnBMI = johnWeight / (johnHeight ** 2)
 
-let markHigherBmi = markBMI > johnBMI
-// console.log(markHigherBmi, 'test 2')
+// let markHigherBmi = markBMI > johnBMI
+// // console.log(markHigherBmi, 'test 2')
 
-if(markBMI > johnBMI){
-  console.log(true)
-} else {
-  console.log(false)
+// if(markBMI > johnBMI){
+//   console.log(true)
+// } else {
+//   console.log(false)
+// }
+
+// ///BUBBLE SORT
+
+let arr = [4,2,7,1,3];
+
+const bubbleSort = (arr) => {
+  let len = arr.length
+  let swap = true;
+
+  while (swap) {
+      swap = false
+    for (let i = 0; i < len; i++) {
+      if (arr[i] > arr[i + 1]) {
+        let temp = arr[i]
+        arr[i] = arr[i + 1]
+        arr[i + 1] = temp
+        swap = true;
+      }
+    }
+  }
+  return arr
 }
+
+console.log(bubbleSort(arr))
+
+// let bubbleSort = (inputArr) => {
+//     let len = inputArr.length;
+//     let swapped;
+//     do {
+//         swapped = false;
+//         for (let i = 0; i < len; i++) {
+//             if (inputArr[i] > inputArr[i + 1]) {
+//                 let tmp = inputArr[i];
+//                 inputArr[i] = inputArr[i + 1];
+//                 inputArr[i + 1] = tmp;
+//                 swapped = true;
+//             }
+//         }
+//     } while (swapped);
+//     return inputArr;
+// };
+
+// console.log(bubbleSort(arr))
