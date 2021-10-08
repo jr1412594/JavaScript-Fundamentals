@@ -59,29 +59,32 @@
 //   console.log(false)
 // }
 
-// ///BUBBLE SORT
+//
 
-let arr = [4,2,7,1,3];
 
-const bubbleSort = (arr) => {
-  let len = arr.length
-  let swap = true;
+ ///BUBBLE SORT
 
-  while (swap) {
-      swap = false
-    for (let i = 0; i < len; i++) {
-      if (arr[i] > arr[i + 1]) {
-        let temp = arr[i]
-        arr[i] = arr[i + 1]
-        arr[i + 1] = temp
-        swap = true;
-      }
-    }
-  }
-  return arr
-}
+// let arr = [4,2,10,7,1,3];
 
-console.log(bubbleSort(arr))
+// const bubbleSort = (arr) => {
+//   let len = arr.length
+//   let swap = true;
+
+//   while (swap) {
+//       swap = false
+//     for (let i = 0; i < len; i++) {
+//       if (arr[i] > arr[i + 1]) {
+//         let temp = arr[i]
+//         arr[i] = arr[i + 1]
+//         arr[i + 1] = temp
+//         swap = true;
+//       }
+//     }
+//   }
+//   return arr
+// }
+
+// console.log(bubbleSort(arr))
 
 // let bubbleSort = (inputArr) => {
 //     let len = inputArr.length;
@@ -91,7 +94,7 @@ console.log(bubbleSort(arr))
 //         for (let i = 0; i < len; i++) {
 //             if (inputArr[i] > inputArr[i + 1]) {
 //                 let tmp = inputArr[i];
-//                 inputArr[i] = inputArr[i + 1];
+                // inputArr[i] = inputArr[i + 1];
 //                 inputArr[i + 1] = tmp;
 //                 swapped = true;
 //             }
@@ -101,3 +104,29 @@ console.log(bubbleSort(arr))
 // };
 
 // console.log(bubbleSort(arr))
+
+
+let arr = [10, 9, 8, 4, 2, 5, 3, 1];
+
+const bubbly = (inputArray) => {
+  let len = inputArray.length;
+  let swap = true;
+
+  while(swap) {
+    swap = false;
+    for (let i = 0; i < len; i++) {
+      if (inputArray[i] > inputArray[i + 1]) {
+        let temp = inputArray[i];
+        inputArray[i] = inputArray[i + 1];
+        inputArray[i + 1] = temp;
+        swap = true
+      }
+    } 
+    len -= 1
+  }
+  return inputArray
+
+}
+
+console.log(bubbly(arr))
+console.log(10 < undefined)
