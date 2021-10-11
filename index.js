@@ -138,20 +138,43 @@
   //function "hasDuplicateValues" is a quadratic equation. 
   // 5 values and number of steps is 25.
 
-const array = [1, 4, 5, 2, 9]
+// const array = [1, 4, 5, 2, 9, 10]
+
+// const hasDuplicateValues = (array) => {
+//   let steps = 0; //count of steps
+
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = 0; j < array.length; j++) {
+//       steps ++; // Increment number of steps
+//       if (i !== j && array[i] === array[j]) {
+//         return true;
+//       }
+//     }
+//   }
+//   console.log(steps); // print number of steps if no duplicates
+//   return false;
+// }
+// console.log(hasDuplicateValues(array))
+
+//MORE TIME EFFICIENT DUPLICATE CHECK
+
+const array = [1, 4, 5, 2, 9, 10];
 
 const hasDuplicateValues = (array) => {
-  let steps = 0; //count of steps
+  let existingValue = []; //initialize empty array
+  let steps = 0; //counting steps
 
   for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length; j++) {
-      steps ++; // Increment number of steps
-      if (i !== j && array[i] === array[j]) {
-        return true;
-      }
+    if (existingValue[array[i]] === 1) { // if index in existing value is 1 return true
+      return true;
+    } else {
+      existingValue[array[i]] = 1 //index in existing value not found, so index in array is set to 1
+      steps++ //counting steps
     }
+    // console.log(existingValue)
   }
-  console.log(steps); // print number of steps if no duplicates
-  return false;
+  console.log(steps)
+  return false
 }
+
 console.log(hasDuplicateValues(array))
