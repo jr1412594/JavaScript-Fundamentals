@@ -1,3 +1,25 @@
+// let arr = [6, 2, 1, 10, 8, 9]
+
+// const bubbleSort = (inputArray) => {
+//   let len = inputArray.length -1;
+//   let swap = true;
+
+//   while(swap) {
+//     swap = false;
+//     for (let i = 0; i < len; i++) {
+//       if (inputArray[i] > inputArray[i + 1]) {
+//         let temp = inputArray[i];
+//         inputArray[i] = inputArray[i + 1];
+//         inputArray[i + 1] = temp;
+//         swap = true;
+//       }
+//     } 
+//     len -= 1;
+//   }
+//   return inputArray
+// }
+// console.log(bubbleSort(arr))
+
 // //TINKER WITH IF ELSE STATEMENTS
 
 // // const age = 19;
@@ -106,27 +128,30 @@
 // console.log(bubbleSort(arr))
 
 
-let arr = [10, 9, 8, 4, 2, 5, 3, 1];
+// let arr = [10, 9, 8, 4, 2, 5, 3, 1];
 
-const bubbly = (inputArray) => {
-  let len = inputArray.length;
-  let swap = true;
 
-  while(swap) {
-    swap = false;
-    for (let i = 0; i < len; i++) {
-      if (inputArray[i] > inputArray[i + 1]) {
-        let temp = inputArray[i];
-        inputArray[i] = inputArray[i + 1];
-        inputArray[i + 1] = temp;
-        swap = true
+
+//COUNTING STEPS IN NESTED LOOPS
+
+//BELOW WILL PROVE A O(N^2) FUNCTION
+  //function "hasDuplicateValues" is a quadratic equation. 
+  // 5 values and number of steps is 25.
+
+const array = [1, 4, 5, 2, 9]
+
+const hasDuplicateValues = (array) => {
+  let steps = 0; //count of steps
+
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array.length; j++) {
+      steps ++; // Increment number of steps
+      if (i !== j && array[i] === array[j]) {
+        return true;
       }
-    } 
-    len -= 1
+    }
   }
-  return inputArray
-
+  console.log(steps); // print number of steps if no duplicates
+  return false;
 }
-
-console.log(bubbly(arr))
-console.log(10 < undefined)
+console.log(hasDuplicateValues(array))
