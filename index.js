@@ -158,23 +158,49 @@
 
 //MORE TIME EFFICIENT DUPLICATE CHECK
 
-const array = [1, 4, 5, 2, 9, 10];
+// const array = [1, 4, 5, 2, 9];
 
-const hasDuplicateValues = (array) => {
-  let existingValue = []; //initialize empty array
-  let steps = 0; //counting steps
+// 
 
-  for (let i = 0; i < array.length; i++) {
-    if (existingValue[array[i]] === 1) { // if index in existing value is 1 return true
-      return true;
-    } else {
-      existingValue[array[i]] = 1 //index in existing value not found, so index in array is set to 1
-      steps++ //counting steps
+//FIND THE GREATEST VALUE
+
+// const array = [1, 4, 8, 3, 10, 3]
+// const greatesValue = (array) => {
+//   let biggie = 0;
+//   let steps = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     steps++
+//     if (array[i] > biggie) {
+//       biggie = array[i]
+//     }
+//   }
+//   console.log(steps)
+//   return biggie
+// }
+
+// console.log(greatesValue(array))
+
+
+//LINEAR SORT
+let array = [4, 2, 1, 9, 5];
+// let array = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+const linearSort = (array) => {
+  for (let i = 0; i < array.length - 1; i++) {
+    let lowestValue = array[i];
+
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] < lowestValue) {
+        lowestValue = array[j];
+      }
+        if (lowestValue !== array[i]) {
+        temp = array[i];
+        array[i] = lowestValue;
+        array[j] = temp 
+      }
     }
-    // console.log(existingValue)
   }
   console.log(steps)
-  return false
+  return array
 }
-
-console.log(hasDuplicateValues(array))
+console.log(linnearSort(array))
