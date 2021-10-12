@@ -182,25 +182,51 @@
 
 
 //LINEAR SORT
-let array = [4, 2, 1, 9, 5];
+// let array = [4, 2, 1, 9, 5];
+// let array = [2, 1, 0];
 // let array = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
-const linearSort = (array) => {
-  for (let i = 0; i < array.length - 1; i++) {
-    let lowestValue = array[i];
+// const linearSort = (array) => {
+//   for (let i = 0; i < array.length - 1; i++) {
+//     let lowestValue = array[i];
 
-    for (let j = i + 1; j < array.length; j++) {
-      if (array[j] < lowestValue) {
-        lowestValue = array[j];
+//     for (let j = i + 1; j < array.length; j++) {
+//       if (array[j] < lowestValue) {
+//         lowestValue = array[j];
+//       }
+//         if (lowestValue !== array[i]) {
+//         let temp = array[i];
+//         array[i] = lowestValue;
+//         array[j] = temp 
+//       }
+//     }
+//   }
+//   return array
+// }
+// console.log(linearSort(array))
+
+//INSERTION SORT
+
+// let array = [4, 2, 7, 1, 3];
+let array = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+
+const insertionSort = (array) => {
+
+  for(let i = 1; i < array.length; i++) {
+    let tempValue = array[i]; //actual value
+    let position = i - 1; //actual index 
+    
+    while(position >= 0) {
+      if (array[position] > tempValue) {
+        array[position + 1] = array[position];
+        position--;
+      } else {
+        break;
       }
-        if (lowestValue !== array[i]) {
-        temp = array[i];
-        array[i] = lowestValue;
-        array[j] = temp 
-      }
+    array[position + 1] = tempValue
     }
   }
-  console.log(steps)
   return array
 }
-console.log(linnearSort(array))
+
+console.log(insertionSort(array))
