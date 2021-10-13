@@ -208,25 +208,50 @@
 //INSERTION SORT
 
 // let array = [4, 2, 7, 1, 3];
-let array = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+// let array = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 
-const insertionSort = (array) => {
+// const insertionSort = (array) => {
 
-  for(let i = 1; i < array.length; i++) {
-    let tempValue = array[i]; //actual value
-    let position = i - 1; //actual index 
+//   for(let i = 1; i < array.length; i++) {
+//     let tempValue = array[i]; //actual value
+//     let position = i - 1; //actual index 
     
-    while(position >= 0) {
-      if (array[position] > tempValue) {
-        array[position + 1] = array[position];
-        position--;
-      } else {
-        break;
+//     while(position >= 0) {
+//       if (array[position] > tempValue) {
+//         array[position + 1] = array[position];
+//         position--;
+//       } else {
+//         break;
+//       }
+//     array[position + 1] = tempValue
+//     }
+//   }
+//   return array
+// }
+
+// console.log(insertionSort(array))
+
+//INTERSECTION CHECK
+//NESTED LOOPS = TIME COMPLEXITY 0(N^2)
+// let firstArray = [3, 1, 4, 2];
+// let secondArray = [4, 5, 3, 6];
+let firstArray = [3, 1, 4, 2];
+let secondArray = [3, 1, 4, 2];
+
+const intersection = (array1, array2) => {
+  let result = [];
+  let step = 0;
+  for (let i = 0; i < array1.length; i++) {
+    for (let j = 0; j < array2.length; j++) {
+      step++;
+      if(array1[i] === array2[j]) {
+        result.push(array1[i])
+        // break; // without this runs through every element;
+        break; //ends iteration early
       }
-    array[position + 1] = tempValue
     }
   }
-  return array
+  console.log(step)
+  return result
 }
-
-console.log(insertionSort(array))
+console.log(intersection(firstArray, secondArray))
