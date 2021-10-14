@@ -278,21 +278,39 @@
 // }
 // console.log(bub(array))
 
-const alpha = 'abcdefghijklmnopqrstuvwxyz ';
-// const sentence = 'let there be light'
-const sentence = 'the quick brown fox jumps over the lazy dog';
+// const alpha = 'abcdefghijklmnopqrstuvwxyz ';
+// // const sentence = 'let there be light'
+// const sentence = 'the quick brown fox jumps over the lazy dog';
 
-const letterMissingChecker = (alpha, sentence) => {
+// const letterMissingChecker = (alpha, sentence) => {
+//   let hashMap = {};
+
+//   for(const letter of sentence) {
+//     console.log(letter)
+//     hashMap[letter] = true;
+//   }
+//   for(const letter of alpha) {
+    
+//     if(!hashMap[letter]) {return false}
+//   }
+//   return true
+// }
+// console.log(letterMissingChecker(alpha, sentence))
+
+const alpha = 'abcdefghijklmnopqrstuvwxyz ';
+const sentence = 'let there be light';
+// const sentence = 'the quick brown fox jumps over the lazy dog';
+
+const frequencyLetters = (alpha, sentence) => {
   let hashMap = {};
+  let str = '';
 
   for(const letter of sentence) {
-    console.log(letter)
     hashMap[letter] = true;
   }
   for(const letter of alpha) {
-    
-    if(!hashMap[letter]) {return false}
+    if (!hashMap[letter]) { str += letter}
   }
-  return true
+  return str
 }
-console.log(letterMissingChecker(alpha, sentence))
+console.log(frequencyLetters(alpha, sentence))
