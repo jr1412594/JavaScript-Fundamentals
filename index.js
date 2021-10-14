@@ -235,23 +235,64 @@
 //NESTED LOOPS = TIME COMPLEXITY 0(N^2)
 // let firstArray = [3, 1, 4, 2];
 // let secondArray = [4, 5, 3, 6];
-let firstArray = [3, 1, 4, 2];
-let secondArray = [3, 1, 4, 2];
+// let firstArray = [3, 1, 4, 2];
+// let secondArray = [3, 1, 4, 2];
 
-const intersection = (array1, array2) => {
-  let result = [];
-  let step = 0;
-  for (let i = 0; i < array1.length; i++) {
-    for (let j = 0; j < array2.length; j++) {
-      step++;
-      if(array1[i] === array2[j]) {
-        result.push(array1[i])
-        // break; // without this runs through every element;
-        break; //ends iteration early
-      }
-    }
+// const intersection = (array1, array2) => {
+//   let result = [];
+//   let step = 0;
+//   for (let i = 0; i < array1.length; i++) {
+//     for (let j = 0; j < array2.length; j++) {
+//       step++;
+//       if(array1[i] === array2[j]) {
+//         result.push(array1[i])
+//         // break; // without this runs through every element;
+//         break; //ends iteration early
+//       }
+//     }
+//   }
+//   console.log(step)
+//   return result
+// }
+// console.log(intersection(firstArray, secondArray))
+
+// let array = [2, 1, 5, 10, 3];
+
+// const bub = (array) => {
+//   const len = array.length;
+//   let swapped = true;
+
+//   while(swapped) {
+//     swapped = false;
+    
+//     for (let i = 0; i < len; i++) {
+//       if (array[i] > array[i + 1]) {
+//         let temp = array[i + 1];
+//         array[i + 1] = array[i];
+//         array[i] = temp;
+//         swapped = true;
+//       }
+//     }
+//   }
+//   return array
+// }
+// console.log(bub(array))
+
+const alpha = 'abcdefghijklmnopqrstuvwxyz ';
+// const sentence = 'let there be light'
+const sentence = 'the quick brown fox jumps over the lazy dog';
+
+const letterMissingChecker = (alpha, sentence) => {
+  let hashMap = {};
+
+  for(const letter of sentence) {
+    console.log(letter)
+    hashMap[letter] = true;
   }
-  console.log(step)
-  return result
+  for(const letter of alpha) {
+    
+    if(!hashMap[letter]) {return false}
+  }
+  return true
 }
-console.log(intersection(firstArray, secondArray))
+console.log(letterMissingChecker(alpha, sentence))
