@@ -322,17 +322,32 @@
 let array1 = [1, 2, 3, 4, 5];
 let array2 = [0, 1, 3, 6, 8]
 //return [2, 4]
-const intersection = (array1, array2) => {
+// const intersection = (array1, array2) => {
+//   let hashMap = {};
+//   let result = [];
+
+//   for(const value of array1) {
+//     hashMap[value] = true;
+//   }
+
+//   for(const value of array2) {
+//     if(hashMap[value]) {result.push(value)}
+//   }
+//   return result
+// }
+// console.log(intersection(array1, array2))
+
+let array = ['a', 'b', 'c', 'a', 'd', 'c', 'e', 'f'];
+
+const firstDuplicate = (array) => {
   let hashMap = {};
-  let result = [];
-
-  for(const value of array1) {
-    hashMap[value] = true;
+  for (const value of array) {
+    if (hashMap[value]) {
+      return value
+    } else {
+      hashMap[value] = 1
+    }
   }
-
-  for(const value of array2) {
-    if(hashMap[value]) {result.push(value)}
-  }
-  return result
+  console.log(hashMap)
 }
-console.log(intersection(array1, array2))
+console.log(firstDuplicate(array))
