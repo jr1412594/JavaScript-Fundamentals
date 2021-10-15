@@ -337,17 +337,33 @@ let array2 = [0, 1, 3, 6, 8]
 // }
 // console.log(intersection(array1, array2))
 
-let array = ['a', 'b', 'c', 'a', 'd', 'c', 'e', 'f'];
+// let array = ['a', 'b', 'c', 'a', 'd', 'c', 'e', 'f'];
 
-const firstDuplicate = (array) => {
+// const firstDuplicate = (array) => {
+//   let hashMap = {};
+//   for (const value of array) {
+//     if (hashMap[value]) {
+//       return value
+//     } else {
+//       hashMap[value] = 1
+//     }
+//   }
+//   console.log(hashMap)
+// }
+// console.log(firstDuplicate(array))
+
+let str = 'minimum';
+
+const firstUnique = (str) => {
+  let len = str.length;
   let hashMap = {};
-  for (const value of array) {
-    if (hashMap[value]) {
-      return value
-    } else {
-      hashMap[value] = 1
-    }
+  let unq;
+  let steps = 0
+  for(let i = len-1; i >= 0; i--) {
+    steps++
+    hashMap[str[i]] ?   hashMap[str[i]]++ : hashMap[str[i]] = 1
+    if(hashMap[str[i]] === 1) {unq = str[i]} 
   }
-  console.log(hashMap)
+  console.log('unq :', unq, 'steps :', steps)
 }
-console.log(firstDuplicate(array))
+console.log(firstUnique(str))
