@@ -281,7 +281,7 @@
 // const alpha = 'abcdefghijklmnopqrstuvwxyz ';
 // // const sentence = 'let there be light'
 // const sentence = 'the quick brown fox jumps over the lazy dog';
-
+// DOES THE SENTENCE CONTAIN ALL LETTERS IN THE ALPHABET
 // const letterMissingChecker = (alpha, sentence) => {
 //   let hashMap = {};
 
@@ -297,20 +297,42 @@
 // }
 // console.log(letterMissingChecker(alpha, sentence))
 
-const alpha = 'abcdefghijklmnopqrstuvwxyz ';
-const sentence = 'let there be light';
-// const sentence = 'the quick brown fox jumps over the lazy dog';
 
-const frequencyLetters = (alpha, sentence) => {
+
+// WHAT LETTERS ARE MISSING IN THE SENTENCE
+// const alpha = 'abcdefghijklmnopqrstuvwxyz ';
+// const sentence = 'let there be light';
+// const sentence = 'the quick brown box jumps over the lazy dog';
+
+// const frequencyLetters = (alpha, sentence) => {
+//   let hashMap = {};
+//   let str = '';
+
+//   for(const letter of sentence) {
+//     hashMap[letter] = true;
+//   }
+//   for(const letter of alpha) {
+//     if (!hashMap[letter]) { str += letter}
+//   }
+//   return str.length !== 0 ? str : "All letters accounted for!" 
+//   // return str
+// }
+// console.log(frequencyLetters(alpha, sentence))
+
+let array1 = [1, 2, 3, 4, 5];
+let array2 = [0, 1, 3, 6, 8]
+//return [2, 4]
+const intersection = (array1, array2) => {
   let hashMap = {};
-  let str = '';
+  let result = [];
 
-  for(const letter of sentence) {
-    hashMap[letter] = true;
+  for(const value of array1) {
+    hashMap[value] = true;
   }
-  for(const letter of alpha) {
-    if (!hashMap[letter]) { str += letter}
+
+  for(const value of array2) {
+    if(hashMap[value]) {result.push(value)}
   }
-  return str
+  return result
 }
-console.log(frequencyLetters(alpha, sentence))
+console.log(intersection(array1, array2))
