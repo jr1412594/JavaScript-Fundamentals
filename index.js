@@ -319,8 +319,8 @@
 // }
 // console.log(frequencyLetters(alpha, sentence))
 
-let array1 = [1, 2, 3, 4, 5];
-let array2 = [0, 1, 3, 6, 8]
+// let array1 = [1, 2, 3, 4, 5];
+// let array2 = [0, 1, 3, 6, 8]
 //return [2, 4]
 // const intersection = (array1, array2) => {
 //   let hashMap = {};
@@ -352,18 +352,39 @@ let array2 = [0, 1, 3, 6, 8]
 // }
 // console.log(firstDuplicate(array))
 
-let str = 'minimum';
+// let str = 'minimum';
 
-const firstUnique = (str) => {
-  let len = str.length;
-  let hashMap = {};
-  let unq;
-  let steps = 0
-  for(let i = len-1; i >= 0; i--) {
-    steps++
-    hashMap[str[i]] ?   hashMap[str[i]]++ : hashMap[str[i]] = 1
-    if(hashMap[str[i]] === 1) {unq = str[i]} 
-  }
-  console.log('unq :', unq, 'steps :', steps)
-}
-console.log(firstUnique(str))
+// const firstUnique = (str) => {
+//   let len = str.length;
+//   let hashMap = {};
+//   let unq;
+//   let steps = 0
+//   for(let i = len-1; i >= 0; i--) {
+//     steps++
+//     hashMap[str[i]] ?   hashMap[str[i]]++ : hashMap[str[i]] = 1
+//     if(hashMap[str[i]] === 1) {unq = str[i]} 
+//   }
+//   console.log('unq :', unq, 'steps :', steps)
+// }
+// console.log(firstUnique(str))
+
+
+//COUNT DOWN FUNCTION WITH A LOOP
+// const number = 10;
+// const countDown = (number) => {
+//   for (let i = number; i >= 0; i--) {
+//     console.log(i)
+//   }
+// }
+
+// console.log(countDown(20));
+
+// function countDown(number) {
+//   console.log(number)
+//     if(number === 0) {
+//       return
+//     } else {
+//       countDown(number - 1)
+//     }
+// }
+// console.log(countDown(15))
