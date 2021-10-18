@@ -388,3 +388,13 @@
 //     }
 // }
 // console.log(countDown(15))
+
+function factorialRecursion(number) {
+  if(number === 1) {
+    return 1;
+  } else {
+    return number * factorialRecursion(number - 1);
+  }
+}
+
+console.log(factorialRecursion(4))
